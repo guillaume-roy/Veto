@@ -12,7 +12,7 @@ namespace Veto.Infrastructure.Providers
     {
         public TimeSpan GetClosingHour()
         {
-            return TimeSpan.Parse("17:30");
+            return TimeSpan.Parse("18:00");
         }
 
         public TimeSpan GetOpeningHour()

@@ -113,7 +113,8 @@ namespace Veto.Domain.Entities
 
             while (currentTime < endTime)
             {
-                if (!appointmentsForToday.Any(a => a.AppointmentDate == currentTime))
+                if (!appointmentsForToday.Any(a => a.AppointmentDate == currentTime)
+                    && currentTime.Add(appointmentSlotConstraintsProvider.GetSlotDuration()) <= endTime)
                 {
                     availableSlots.Add(currentTime);
                 }
